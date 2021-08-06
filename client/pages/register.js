@@ -1,20 +1,32 @@
 import { useState } from "react";
 import axios from 'axios';
+import { toast } from "react-toastify";
+import { SyncOutlined } from "@ant-design/icons";
 
 const Register = () => {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // console.table({name,email,password});
-        const {data} = await axios.post("http://localhost:8081/api/register",{
-            name,
-            email,
-            password
-        });
-        console.log("response",data);
+        try{
+            setLoading(true);
+            const {data} = await axios.post("http://localhost:8081/api/register",{
+                name,
+                email,
+                password
+            });
+            // console.log("response",data);
+            toast("Registration successful. Please login.");
+            setLoading(false);
+        }catch (err) {
+            toast(err.response.data);
+            setLoading(false);
+        }
+       
     };
 
 
@@ -27,8 +39,12 @@ const Register = () => {
                     <input type="Name" className="form-control mb-4 p-4" value={name} onChange={(e)=>setName(e.target.value)} placeholder="Enter Name" required></input>
                     <input type="Email" className="form-control mb-4 p-4" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter Email" required></input>
                     <input type="Password" className="form-control mb-4 p-4" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" required></input>  
-                    <button type="submit" className= "btn btn-block btn-primary">
-                        Submit
+                    <button
+                        type="submit"
+                        className="btn btn-block btn-primary"
+                        disabled={!name || !email || !password || loading}
+                    >
+                        {loading ? <SyncOutlined spin /> : "Submit"}
                     </button>
                 </form>
             </div>
