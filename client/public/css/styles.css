@@ -5,4 +5,7 @@
 .jumbotron{
     background-image: linear-gradient(to right, #007bff, #000);
     color:#fff;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: .3rem;
 }

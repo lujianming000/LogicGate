@@ -42,7 +42,7 @@ const Register = () => {
                     <input type="Password" className="form-control mb-4 p-4" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Enter Password" required></input>  
                     <button
                         type="submit"
-                        className="btn btn-block btn-primary"
+                        className="btn btn-block btn-primary form-control mb-4 p-4"
                         disabled={!name || !email || !password || loading}
                     >
                         {loading ? <SyncOutlined spin /> : "Submit"}

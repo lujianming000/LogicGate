@@ -68,7 +68,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="btn btn-block btn-primary"
+            className="btn btn-block btn-primary form-control mb-4 p-4"
             disabled={!email || !password || loading}
           >
             {loading ? <SyncOutlined spin /> : "Submit"}
