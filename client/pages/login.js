@@ -11,11 +11,19 @@ const Login = () => {
   const [password, setPassword] = useState("123456");
   const [loading, setLoading] = useState(false);
 
-  // state
-  const { state, dispatch } = useContext(Context);
+ // state
+ const {
+  state: { user },
+  dispatch,
+} = useContext(Context);
+// const { user } = state;
 
-  // router
-  const router = useRouter();
+// router
+const router = useRouter();
+
+useEffect(() => {
+  if (user !== null) router.push("/");
+}, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
