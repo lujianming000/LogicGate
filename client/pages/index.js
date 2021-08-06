@@ -1,8 +1,8 @@
 const Index  = () => {
     return (
         <>
-        <h1 className="jumbotron text-center bg-primary square">Logic Gate</h1>
-        <p>text</p>
+        <h1 className="jumbotron text-center bg-primary square">Course Gallery</h1>
+        <p>a lot of courses...</p>
         </>
     );
 };
