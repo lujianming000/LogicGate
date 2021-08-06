@@ -13,7 +13,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-const { Item, SubMenu } = Menu;
+const { Item, SubMenu, ItemGroup} = Menu;
 
 const TopNav = () => {
   const [current, setCurrent] = useState("");
@@ -73,14 +73,19 @@ const TopNav = () => {
 
       {user !== null && (
         <SubMenu
-          key="/user"
+          key="/subMenu"
           className="ms-auto"
           icon={<CoffeeOutlined />}
           title={user && user.name}
         >
-          <Item key="/logout" className="ms-auto" onClick={logout}>
-            Logout
-          </Item>
+          <ItemGroup>
+            <Item key="/user">
+              <Link href="/user">
+                <a>Dashboard</a>
+              </Link>
+            </Item>
+            <Item onClick={logout}>Logout</Item>
+          </ItemGroup>
         </SubMenu>
       )}
     </Menu>
