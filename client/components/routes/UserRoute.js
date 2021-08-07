@@ -26,6 +26,7 @@ const UserRoute = ({ children }) => {
     }
   };
 
+  //go to the user page
   return (
     <>
       {!ok ? (

@@ -1,3 +1,4 @@
+// main page
 const Index  = () => {
     return (
         <>

@@ -33,6 +33,7 @@ const BecomeInstructor = () => {
       });
   };
 
+  //become instructor page
   return (
     <>
       <h1 className="jumbotron text-center square">Become Instructor</h1>

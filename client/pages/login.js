@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Context } from "../context";
 import { useRouter } from "next/router";
 
+//login page
 const Login = () => {
   const [email, setEmail] = useState("lu19931125@gmail.com");
   const [password, setPassword] = useState("123456");

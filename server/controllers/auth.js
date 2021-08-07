@@ -2,6 +2,7 @@ import User from "../models/user";
 import { hashPassword, comparePassword } from "../utils/auth";
 import jwt from "jsonwebtoken";
 
+//controller
 export const register = async (req, res) => {
   try {
     // console.log(req.body);

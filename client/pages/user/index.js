@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Context } from "../../context";
 import UserRoute from "../../components/routes/UserRoute";
 
+//user dashboard element in user page
 const UserIndex = () => {
   const {
     state: { user },

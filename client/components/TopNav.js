@@ -17,6 +17,7 @@ import { toast } from "react-toastify";
 
 const { Item, SubMenu, ItemGroup } = Menu;
 
+// Navbar
 const TopNav = () => {
   const [current, setCurrent] = useState("");
 
@@ -25,6 +26,7 @@ const TopNav = () => {
 
   const router = useRouter();
 
+  //Get current position
   useEffect(() => {
     process.browser && setCurrent(window.location.pathname);
   }, [process.browser && window.location.pathname]);
@@ -37,6 +39,7 @@ const TopNav = () => {
     router.push("/login");
   };
 
+  // Navbar elements
   return (
     <Menu mode="horizontal" selectedKeys={[current]}>
       <Item

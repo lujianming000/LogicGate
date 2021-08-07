@@ -6,6 +6,8 @@ import Link from "next/link";
 import { Context } from "../context";
 import { useRouter } from "next/router";
 
+
+//Register page
 const Register = () => {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
