@@ -18,30 +18,32 @@ const Register = () => {
         state: { user },
       } = useContext(Context);
     
-      const router = useRouter();
+    const router = useRouter();
     
-      useEffect(() => {
+    useEffect(() => {
         if (user !== null) router.push("/");
       }, [user]);
-
+    
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        // console.table({name,email,password});
-        try{
+    e.preventDefault();
+    // console.table({ name, email, password });
+        try {
             setLoading(true);
-            const {data} = await axios.post(`/api/register`,{
-                name,
-                email,
-                password
+            const { data } = await axios.post(`/api/register`, {
+            name,
+            email,
+            password,
             });
-            // console.log("response",data);
+            // console.log("REGISTER RESPONSE", data);
             toast("Registration successful. Please login.");
+            setName("");
+            setEmail("");
+            setPassword("");
             setLoading(false);
-        }catch (err) {
+        } catch (err) {
             toast(err.response.data);
             setLoading(false);
         }
-       
     };
 
 
