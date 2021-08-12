@@ -1,4 +1,4 @@
-import { Select, Button } from "antd";
+import { Select, Button, Avatar, Badge } from "antd";
 
 const { Option } = Select;
 
@@ -8,6 +8,9 @@ const CourseCreateForm = ({
   handleChange,
   values,
   setValues,
+  preview,
+  uploadButtonText,
+  handleImageRemove,
 }) => {
   const children = [];
   for (let i = 9.99; i <= 100.99; i++) {
@@ -15,7 +18,7 @@ const CourseCreateForm = ({
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div className="form-group pt-2">
+      <div className="form-group">
         <input
           type="text"
           name="name"
@@ -26,7 +29,7 @@ const CourseCreateForm = ({
         />
       </div>
 
-      <div className="form-group pt-2">
+      <div className="form-group">
         <textarea
           name="description"
           cols="7"
@@ -37,7 +40,7 @@ const CourseCreateForm = ({
         ></textarea>
       </div>
 
-      <div className="form-row pt-2">
+      <div className="form-row">
         <div className="col">
           <div className="form-group">
             <Select
@@ -53,21 +56,21 @@ const CourseCreateForm = ({
         </div>
 
         {values.paid && (
-            <div className="form-row pt-2">
-              <Select
-                style={{ width: "100%" }}
-                defaultValue="$9.99"
-                onChange={(v) => setValues({ ...values, price: v })}
-                tokenSeparators={[,]}
-                size="large"
-              >
-                {children}
-              </Select>
-            </div>
+          <div className="form-group">
+            <Select
+              defaultValue="$9.99"
+              style={{ widht: "100%" }}
+              onChange={(v) => setValues({ ...values, price: v })}
+              tokenSeparators={[,]}
+              size="large"
+            >
+              {children}
+            </Select>
+          </div>
         )}
       </div>
 
-      <div className="form-group pt-2">
+      <div className="form-group">
         <input
           type="text"
           name="category"
@@ -78,11 +81,11 @@ const CourseCreateForm = ({
         />
       </div>
 
-      <div className="form-row pt-2">
+      <div className="form-row">
         <div className="col">
           <div className="form-group">
             <label className="btn btn-outline-secondary btn-block text-left">
-              {values.loading ? "Uploading" : "Image Upload"}
+              {uploadButtonText}
               <input
                 type="file"
                 name="image"
@@ -93,9 +96,15 @@ const CourseCreateForm = ({
             </label>
           </div>
         </div>
+
+        {preview && (
+          <Badge count="X" onClick={handleImageRemove} className="pointer">
+            <Avatar width={200} src={preview} />
+          </Badge>
+        )}
       </div>
 
-      <div className="row pt-2">
+      <div className="row">
         <div className="col">
           <Button
             onClick={handleSubmit}
@@ -104,6 +113,7 @@ const CourseCreateForm = ({
             loading={values.loading}
             type="primary"
             size="large"
+            shape="round"
           >
             {values.loading ? "Saving..." : "Save & Continue"}
           </Button>
