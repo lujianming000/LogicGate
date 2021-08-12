@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Context } from "../context";
 import { useRouter } from "next/router";
 
-//login page
 const Login = () => {
   const [email, setEmail] = useState("lu19931125@gmail.com");
   const [password, setPassword] = useState("123456");
@@ -77,7 +76,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="btn btn-block btn-primary form-control mb-4 p-4"
+            className="btn btn-block btn-primary"
             disabled={!email || !password || loading}
           >
             {loading ? <SyncOutlined spin /> : "Submit"}
@@ -96,7 +95,6 @@ const Login = () => {
             <a className="text-danger">Forgot password</a>
           </Link>
         </p>
-
       </div>
     </>
   );

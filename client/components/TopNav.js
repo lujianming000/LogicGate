@@ -15,9 +15,8 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
-const { Item, SubMenu, ItemGroup } = Menu;
+const { Item, SubMenu, ItemGroup, Group} = Menu;
 
-// Navbar
 const TopNav = () => {
   const [current, setCurrent] = useState("");
 
@@ -26,7 +25,6 @@ const TopNav = () => {
 
   const router = useRouter();
 
-  //Get current position
   useEffect(() => {
     process.browser && setCurrent(window.location.pathname);
   }, [process.browser && window.location.pathname]);
@@ -39,7 +37,6 @@ const TopNav = () => {
     router.push("/login");
   };
 
-  // Navbar elements
   return (
     <Menu mode="horizontal" selectedKeys={[current]} className="mb-2">
       <Item
@@ -77,22 +74,24 @@ const TopNav = () => {
       {user === null && (
         <>
           <Item
-            key="/login"
-            onClick={(e) => setCurrent(e.key)}
-            icon={<LoginOutlined />}
-          >
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
-          </Item>
-
-          <Item
+            className="float-right"
             key="/register"
             onClick={(e) => setCurrent(e.key)}
             icon={<UserAddOutlined />}
           >
             <Link href="/register">
               <a>Register</a>
+            </Link>
+          </Item>
+
+          <Item
+            className="float-right"
+            key="/login"
+            onClick={(e) => setCurrent(e.key)}
+            icon={<LoginOutlined />}
+          >
+            <Link href="/login">
+              <a>Login</a>
             </Link>
           </Item>
         </>
@@ -102,7 +101,7 @@ const TopNav = () => {
         <SubMenu
           icon={<CoffeeOutlined />}
           title={user && user.name}
-          className="ms-auto"
+          className="float-right"
         >
           <ItemGroup>
             <Item key="/user">
@@ -120,6 +119,7 @@ const TopNav = () => {
           key="/instructor"
           onClick={(e) => setCurrent(e.key)}
           icon={<TeamOutlined />}
+          className="float-right"
         >
           <Link href="/instructor">
             <a>Instructor</a>

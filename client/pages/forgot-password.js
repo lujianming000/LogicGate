@@ -24,7 +24,7 @@ const ForgotPassword = () => {
   // redirect if user is logged in
   useEffect(() => {
     if (user !== null) router.push("/");
-  }, []);
+  }, [user]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -102,7 +102,7 @@ const ForgotPassword = () => {
 
           <button
             type="submit"
-            className="btn btn-block btn-primary form-control mb-4 p-4"
+            className="btn btn-primary btn-block p-2"
             disabled={loading || !email}
           >
             {loading ? <SyncOutlined spin /> : "Submit"}
