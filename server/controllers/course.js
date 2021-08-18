@@ -2,7 +2,6 @@ import AWS from "aws-sdk";
 import { nanoid } from "nanoid";
 import Course from "../models/course";
 import Completed from "../models/completed";
-import sllugify from "slugify";
 import slugify from "slugify";
 import { readFileSync } from "fs";
 import User from "../models/user";
@@ -33,7 +32,7 @@ export const uploadImage = async (req, res) => {
 
     // image params
     const params = {
-      Bucket: "edemy-bucket",
+      Bucket: "logicgate-bucket",
       Key: `${nanoid()}.${type}`,
       Body: base64Data,
       ACL: "public-read",
@@ -124,7 +123,7 @@ export const uploadVideo = async (req, res) => {
 
     // video params
     const params = {
-      Bucket: "edemy-bucket",
+      Bucket: "logicgate-bucket",
       Key: `${nanoid()}.${video.type.split("/")[1]}`,
       Body: readFileSync(video.path),
       ACL: "public-read",

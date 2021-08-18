@@ -3,8 +3,9 @@
 }
 
 .jumbotron {
+  /* background-image: linear-gradient(to right, #007bff, #000); */
   background-image: linear-gradient(to right, #007bff, #000);
-  color: #fff;
+  color:#fff;
 }
 
 .pointer {
