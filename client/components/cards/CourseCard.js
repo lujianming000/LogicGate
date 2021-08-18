@@ -4,6 +4,7 @@ import { currencyFormatter } from "../../utils/helpers";
 
 const { Meta } = Card;
 
+/* course card*/
 const CourseCard = ({ course }) => {
   const { name, instructor, price, image, slug, paid, category } = course;
   return (

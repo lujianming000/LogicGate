@@ -2,13 +2,59 @@
 Individual project
 Team Member: Jianming Lu (Solo)
 
+## Iteration 3
+### Piazza post (10 points)
+Please check piazza LogicGate #Iter3.
+
+## Iteration 3
+### Piazza post (10 points)
+Please check piazza LogicGate #Iter3.
+
+### Working app (45 points)
+Please check the link below.
+http://137.184.3.16/
+
+### App progress (15 points)
+The app has been completed. It's a simple app with some general styling but It has all functions. The progress from the last iteration is below.
+
+1. On the course gallery page, users could see a list of courses.
+2. Users can see the course page and course preview when users click the course on the gallery page.
+3. Users and instructors can see the lesson page once clicking the lesson on the course page.
+4. Instructors can edit the lesson.
+5. Courses can be free enrolled or paid enrolled.
+6. Instructors can see their revenue on the instructor dashboard.
+
+### Readme/screenshots (15 points)
+Screenshot:
+Course Gallery Page:
+![](screenshots/gallery.PNG)
+Course Page:
+![](screenshots/course-view.PNG)
+Lesson Page:
+![](screenshots/lesson.PNG)
+Lesson Edit Page:
+![](screenshots/lesson-edit.PNG)
+Account Page:
+![](screenshots/account.PNG)
+Revenue Page:
+![](screenshots/revenue.PNG)
+
+### GitHub contributor uniformity (5 points)
+Individual project
+Jianming Lu (100%)
+
+### GitHub commits/versions/comments (10 points)
+Please check the link below.
+https://github.com/lujianming000/LogicGate
+
+
 ## Iteration 2
 ### Piazza post (10 points)
 Please check piazza LogicGate #Iter2.
 
 ### Working app (45 points)
 Please check the link below.
-https://lg-fe.herokuapp.com/
+http://137.184.3.16/
 
 ### App progress (15 points)
 All progress so far has been displayed below. The screenshot will be shown in the next section.
@@ -54,7 +100,7 @@ Please check piazza LogicGate #Iter1.
 
 ### Working app (45 points)
 Please check the link below.
-https://lg-fe.herokuapp.com/
+http://137.184.3.16/
 
 ### App progress (15 points)
 I built the existing app from scratch. This is iteration 1. All progress so far has been displayed below. The screenshot will be shown in the next section.
