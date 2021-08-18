@@ -28,12 +28,11 @@ const BecomeInstructor = () => {
       })
       .catch((err) => {
         console.log(err.response.status);
-        toast("developing...hold on!");
+        toast("Stripe onboarding failed. Try again.");
         setLoading(false);
       });
   };
 
-  //become instructor page
   return (
     <>
       <h1 className="jumbotron text-center square">Become Instructor</h1>
@@ -44,9 +43,9 @@ const BecomeInstructor = () => {
             <div className="pt-4">
               <UserSwitchOutlined className="display-1 pb-3" />
               <br />
-              <h1>Setup payout to publish courses on Logic Gate</h1>
+              <h2>Setup payout to publish courses on Edemy</h2>
               <p className="lead text-warning">
-                Logic Gate partners with stripe to transfer earnings to your bank
+                Edemy partners with stripe to transfer earnings to your bank
                 account
               </p>
 

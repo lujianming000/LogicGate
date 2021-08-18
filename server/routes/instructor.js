@@ -20,4 +20,3 @@ router.get("/current-instructor", requireSignin, currentInstructor);
 router.get("/instructor-courses", requireSignin, instructorCourses);
 
 module.exports = router;
-

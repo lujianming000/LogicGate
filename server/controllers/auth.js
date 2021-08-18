@@ -13,7 +13,6 @@ const awsConfig = {
 
 const SES = new AWS.SES(awsConfig);
 
-//controller
 export const register = async (req, res) => {
   try {
     // console.log(req.body);
@@ -56,6 +55,7 @@ export const login = async (req, res) => {
     // check password
     const match = await comparePassword(password, user.password);
     if (!match) return res.status(400).send("Wrong password");
+
     // create signed jwt
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "7d",
@@ -104,6 +104,7 @@ export const forgotPassword = async (req, res) => {
       { passwordResetCode: shortCode }
     );
     if (!user) return res.status(400).send("User not found");
+
     // prepare for email
     const params = {
       Source: process.env.EMAIL_FROM,
@@ -119,7 +120,7 @@ export const forgotPassword = async (req, res) => {
                   <h1>Reset password</h1>
                   <p>User this code to reset your password</p>
                   <h2 style="color:red;">${shortCode}</h2>
-                  <i>Logic Gate</i>
+                  <i>edemy.com</i>
                 </html>
               `,
           },
